@@ -106,15 +106,12 @@ a { color: var(--accent); }
 }
 
 .avatar {
-  width: 88px;
-  height: 88px;
+  display: block;
+  width: 140px;
+  height: 140px;
   border-radius: 50%;
-  background: var(--accent);
-  color: var(--accent-text);
-  display: grid;
-  place-items: center;
-  font-size: 28px;
-  font-weight: 700;
+  object-fit: cover;
+  background: #000;
   margin-bottom: 24px;
 }
 
@@ -184,27 +181,6 @@ h2 {
 
 .card h3 { margin: 0 0 8px; }
 .card p { color: var(--muted); margin: 0 0 12px; }
-
-.card-link {
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.contact-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  list-style: none;
-  padding: 0;
-}
-
-.contact-links a {
-  display: inline-block;
-  padding: 8px 16px;
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  text-decoration: none;
-}
 
 /* Footer */
 .site-footer {
