@@ -1,20 +1,16 @@
 // Footer year
 document.getElementById("year").textContent = new Date().getFullYear();
 
-// Light/dark mode toggle (remembers your choice)
+// Theme toggle: black & silver (dark) by default, light mode on click (remembered)
 const root = document.documentElement;
 const toggle = document.getElementById("theme-toggle");
 
 try {
-  const saved = localStorage.getItem("theme");
-  if (saved) root.dataset.theme = saved;
+  if (localStorage.getItem("theme") === "light") root.dataset.theme = "light";
 } catch (e) {}
 
 toggle.addEventListener("click", () => {
-  const isDark =
-    root.dataset.theme === "dark" ||
-    (!root.dataset.theme && matchMedia("(prefers-color-scheme: dark)").matches);
-  const next = isDark ? "light" : "dark";
+  const next = root.dataset.theme === "light" ? "dark" : "light";
   root.dataset.theme = next;
   try { localStorage.setItem("theme", next); } catch (e) {}
 });
